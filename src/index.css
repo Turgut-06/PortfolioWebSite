@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-image: url("./assets/background_image.jpg");
+    background-size: cover;
+    background-color: white;
+}
+    
+
