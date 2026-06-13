@@ -1,30 +1,82 @@
-.logo img{
-    width: 80px;
-    height: 80px;
-    margin-left: 20px;
-    border-radius: 50px;
-    margin-top: 10px;
+.layout {
+  min-height: 100vh;
 }
 
-.layout{
-    display: flex;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.65);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-.rightSide{
-    
-    right: 100px;
-    display: flex;
-    gap: 40px;
-    position: fixed;
-    margin-top: 10px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #f8fafc;
 }
 
-.rightSide button{
-    font-size: 20px;
-    color: red;
-    background-color: white;
-    box-sizing: border-box;
-    width: 100px;
-    height: 40px;
-    border-radius: 40px;
+.brand p {
+  margin: 0;
+  letter-spacing: 0.4px;
+}
+
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  color: #ffffff;
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.menu a.active {
+  color: #0f172a;
+  background: linear-gradient(120deg, #22d3ee, #818cf8);
+}
+
+.content {
+  width: min(1120px, 92%);
+  margin: 28px auto 0;
+  padding-bottom: 44px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

@@ -2,11 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body{
-    background-image: url("./assets/background_image.jpg");
-    background-size: cover;
-    background-color: white;
+* {
+  box-sizing: border-box;
 }
-    
 
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 10% 0%, #1e293b 0%, #020617 55%);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.stack {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.hero h1,
+.card h2 {
+  margin-top: 8px;
+  color: #f8fafc;
+}
+
+.hero p,
+.card p {
+  margin-top: 10px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.eyebrow {
+  color: #22d3ee;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.hero-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, #22d3ee, #818cf8);
+  color: #0f172a;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e2e8f0;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card small {
+  display: inline-block;
+  margin-top: 14px;
+  color: #93c5fd;
+}
+
+.contact-form {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(30, 41, 59, 0.5);
+  color: #f8fafc;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.contact-form label {
+  color: #cbd5e1;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .three-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+}

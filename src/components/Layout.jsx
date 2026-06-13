@@ -1,27 +1,26 @@
-import { useNavigate } from "react-router-dom"
-import "./Layout.css"
+import { NavLink, Outlet } from "react-router-dom";
+import "./Layout.css";
 
 const Layout = () => {
-    const navigate= useNavigate()
   return (
     <div className="layout">
-      <div className='leftSide'>
-        <div className='logo'>
-          <img src="src/assets/Resim1.jpg" alt="resim bulunamadı" />
+      <header className="navbar">
+        <div className="brand">
+          <span className="brand-dot" />
+          <p>Turgut Portfolio</p>
         </div>
-      </div>
-      <div className='rightSide'>
-        <button onClick={() => navigate("/")}>Home</button>
-
-        <button onClick={()=> navigate("/about")}>About</button>
-
-        <button onClick={()=> navigate("/projects")}>Projects</button>
-
-        <button onClick={()=> navigate("/contact")}>Contact</button>
-     </div>
-
+        <nav className="menu">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </nav>
+      </header>
+      <main className="content">
+        <Outlet />
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
