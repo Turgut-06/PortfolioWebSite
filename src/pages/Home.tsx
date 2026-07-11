@@ -1,5 +1,5 @@
 import { education } from "../data/education";
-import { heroTechStack, homeTechStack } from "../data/techIcons";
+import { heroTechStack} from "../data/techIcons";
 import TechLogo from "../components/TechLogo";
 
 const Home = () => {
