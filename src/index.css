@@ -6,12 +6,17 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
   background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
   color: #e2e8f0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1,
@@ -57,7 +62,14 @@ p {
 .hero-actions {
   margin-top: 18px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+}
+
+.hero h1 {
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+  line-height: 1.55;
+  font-weight: 600;
 }
 
 .btn {
@@ -365,6 +377,94 @@ p {
 @media (max-width: 700px) {
   .two-col,
   .three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stack {
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px 16px;
+    border-radius: 14px;
+  }
+
+  .hero h1,
+  .card h2 {
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+
+  .card h3,
+  .project-card-header h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .tech-logo-row {
+    gap: 10px;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .tech-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .education-meta-item {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .education-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .contact-hero {
+    padding: 22px 16px;
+  }
+
+  .contact-channel {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .contact-channel-arrow {
+    display: none;
+  }
+
+  .contact-channel-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-channel p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .tech-logo-grid {
     grid-template-columns: 1fr;
   }
 }

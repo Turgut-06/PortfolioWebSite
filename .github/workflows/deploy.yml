@@ -1,0 +1,51 @@
+name: Deploy React TS Site to Pages
+
+on:
+  push:
+    branches: [ "master" ] # Eğer ana branch adınız 'master' ise 'master' olarak değiştirin
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda birden fazla deploy çalışırsa çakışmayı önler
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # Kullandığınız Node sürümüne göre 18 veya 22 de yapabilirsiniz
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build # React/TypeScript kodunu statik HTML/JS/CSS'e dönüştürür
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # ÖNEMLİ: Eğer Vite kullanıyorsanız çıktı 'dist' klasörüne yüklenir.
+          # Eğer Create React App (CRA) kullanıyorsanız burayı './build' yapmalısınız.
+          path: './dist' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
