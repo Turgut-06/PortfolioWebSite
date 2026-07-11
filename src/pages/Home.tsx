@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { education } from "../data/education";
 import { heroTechStack} from "../data/techIcons";
 import TechLogo from "../components/TechLogo";
@@ -18,12 +19,12 @@ const Home = () => {
 Clean Architecture, RESTful API ve Clean Code prensiplerini işimin merkezine koyuyor; sürdürülebilir, ölçeklenebilir ve her teknoloji stack'ine hızla adapte olabilen çözümler üretiyorum.
         </h1>   
         <div className="hero-actions">
-          <a href="/projects" className="btn btn-primary">
+          <Link to="/projects" className="btn btn-primary">
             Projelerim
-          </a>                                                                                                                                                                                 
-          <a href="/contact" className="btn btn-secondary">
+          </Link>
+          <Link to="/contact" className="btn btn-secondary">
             İletişime Geç
-          </a>
+          </Link>
         </div>
       </div>
 
