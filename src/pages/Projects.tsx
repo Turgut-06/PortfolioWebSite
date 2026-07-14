@@ -76,9 +76,9 @@ const internshipProjectList: Project[] = [
     iconAlt: "Bootstrap",
   },
   {
-    title: "Ülkeler Uygulaması & Mobil Geliştirme",
+    title: "Mobil Geliştirme",
     description:
-      "Kotlin ve MVVM mimarisi kullanarak geliştirilen mobil uygulamada, REST API üzerinden Retrofit ile ülke verilerini güvenli ve verimli şekilde çektim. Jetpack bileşenlerinden ViewBinding ve Room kullanarak modern bir uygulama mimarisi oluşturdum; alınan verileri SQLite tabanlı yerel veritabanında saklayarak çevrimdışı erişim ve performans optimizasyonu sağladım..",
+      "Kotlin ve MVVM mimarisi kullanarak geliştirilen mobil uygulamada, REST API üzerinden Retrofit ile verileri güvenli ve verimli şekilde çektim. Jetpack bileşenlerinden ViewBinding ve Room kullanarak modern bir uygulama mimarisi oluşturdum; alınan verileri SQLite tabanlı yerel veritabanında saklayarak çevrimdışı erişim ve performans optimizasyonu sağladım..",
     stack: "Kotlin, MVVM, Retrofit, Jetpack (ViewBinding, Room), SQLite, REST API",
     icon: kotlinIcon,
     iconAlt: "Kotlin",
@@ -114,7 +114,7 @@ const Projects = () => {
       </div>
 
       <div className="card">
-        <h1 className="eyebrow">Stajda yapılan projeler</h1>
+        <h1 className="eyebrow">Bireysel yapılan projeler</h1>
       </div>
 
       <div className="grid three-col">
