@@ -23,7 +23,8 @@ const Layout = () => {
       <main className="content">
         <Outlet />
       </main>
-    </div>
+      
+    </div> 
   );
 };
 
